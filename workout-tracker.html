@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-icon" href="workout-logo-180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="workout-logo-192.png">
 <link rel="manifest" href="data:application/json,{}">
 <title>Workout Tracker</title>
 <style>
@@ -25,7 +27,7 @@ input{font-family:inherit;outline:none;border:none}
 .section-tab.active{background:var(--accent);color:#fff}
 .exercise-card{background:var(--surface);border-radius:var(--radius);padding:14px;margin-bottom:10px;overflow:hidden}
 .exercise-header{display:flex;align-items:center;gap:10px;margin-bottom:10px}
-.ex-icon{width:48px;height:48px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden}
+.ex-icon{width:48px;height:48px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden;background:none!important}
 .exercise-name{font-size:15px;font-weight:600}
 .exercise-target{font-size:11px;color:var(--text2);margin-top:2px}
 .exercise-meta{font-size:12px;color:var(--accent);font-weight:600;text-align:right;flex-shrink:0;margin-left:auto}
@@ -94,36 +96,36 @@ input{font-family:inherit;outline:none;border:none}
 // ── DATA ──
 const PLAN=[
 {id:'day1',name:'Day 1',subtitle:'Full Body (Squat Focus)',exercises:[
-{name:'Goblet Squat',sets:4,reps:'10-12',target:'Quads, Glutes',icon:'🏋️'},
-{name:'Dumbbell Bench Press',sets:3,reps:'10-12',target:'Chest, Triceps',icon:'💪'},
-{name:'Lat Pulldown',sets:3,reps:'10-12',target:'Back, Biceps',icon:'🔽'},
-{name:'Romanian Deadlift',sets:3,reps:'10-12',target:'Hamstrings, Glutes',icon:'🏗️'},
-{name:'Seated DB Shoulder Press',sets:3,reps:'10-12',target:'Shoulders',icon:'🙌'},
-{name:'Plank',sets:3,reps:'40-60 sec',target:'Core',type:'time',icon:'🧱'}],
+{name:'Goblet Squat',sets:4,reps:'10-12',target:'Quads, Glutes',icon:'images/goblet-squat.svg'},
+{name:'Dumbbell Bench Press',sets:3,reps:'10-12',target:'Chest, Triceps',icon:'images/db-bench-press.svg'},
+{name:'Lat Pulldown',sets:3,reps:'10-12',target:'Back, Biceps',icon:'images/lat-pulldown.svg'},
+{name:'Romanian Deadlift',sets:3,reps:'10-12',target:'Hamstrings, Glutes',icon:'images/romanian-deadlift.svg'},
+{name:'Seated DB Shoulder Press',sets:3,reps:'10-12',target:'Shoulders',icon:'images/shoulder-press.svg'},
+{name:'Plank',sets:3,reps:'40-60 sec',target:'Core',type:'time',icon:'images/plank.svg'}],
 finisher:'10 min incline treadmill walk',
-warmup:[{name:'Leg Swings (forward)',detail:'10/leg — Hamstrings, hip flexors',icon:'🦵'},{name:'Leg Swings (side)',detail:'10/leg — Groin, glutes',icon:'↔️'},{name:'Hip Circles',detail:'10 each direction — Hip mobility',icon:'🔄'},{name:'Arm Circles',detail:'10 each direction — Shoulder warm-up',icon:'🔁'},{name:'Bodyweight Squat',detail:'10 slow — Ankles, knees, hips',icon:'⬇️'},{name:'Shoulder Rotations',detail:'10 each arm — Rotator cuff',icon:'🔃'}],
-stretches:[{name:'Kneeling Hip Flexor Stretch',detail:'30 sec/side — Hip flexors',icon:'🧎'},{name:'Standing Quad Stretch',detail:'30 sec/side — Quads',icon:'🦵'},{name:'Seated Hamstring Stretch',detail:'30 sec/side — Hamstrings',icon:'🪑'},{name:'Pigeon Pose (or figure-4)',detail:'30 sec/side — Glutes, piriformis',icon:'🐦'}]},
+warmup:[{name:'Leg Swings (forward)',detail:'10/leg — Hamstrings, hip flexors',icon:'images/leg-swing-forward.svg'},{name:'Leg Swings (side)',detail:'10/leg — Groin, glutes',icon:'images/leg-swing-side.svg'},{name:'Hip Circles',detail:'10 each direction — Hip mobility',icon:'images/hip-circles.svg'},{name:'Arm Circles',detail:'10 each direction — Shoulder warm-up',icon:'images/arm-circles.svg'},{name:'Bodyweight Squat',detail:'10 slow — Ankles, knees, hips',icon:'images/bw-squat.svg'},{name:'Shoulder Rotations',detail:'10 each arm — Rotator cuff',icon:'images/shoulder-rotations.svg'}],
+stretches:[{name:'Kneeling Hip Flexor Stretch',detail:'30 sec/side — Hip flexors',icon:'images/hip-flexor-kneel.svg'},{name:'Standing Quad Stretch',detail:'30 sec/side — Quads',icon:'images/quad-stretch.svg'},{name:'Seated Hamstring Stretch',detail:'30 sec/side — Hamstrings',icon:'images/hamstring-stretch.svg'},{name:'Pigeon Pose (or figure-4)',detail:'30 sec/side — Glutes, piriformis',icon:'images/pigeon-pose.svg'}]},
 {id:'day2',name:'Day 2',subtitle:'Full Body (Hinge Focus)',exercises:[
-{name:'Trap Bar / DB Deadlift',sets:4,reps:'8-10',target:'Hamstrings, Back, Glutes',icon:'🏗️'},
-{name:'Incline DB Press',sets:3,reps:'10-12',target:'Upper Chest, Triceps',icon:'📐'},
-{name:'Seated Cable Row',sets:3,reps:'10-12',target:'Mid Back, Biceps',icon:'🚣'},
-{name:'Leg Press',sets:3,reps:'12-15',target:'Quads',icon:'🦿'},
-{name:'Lateral Raises',sets:3,reps:'15',target:'Side Delts',icon:'🦅'},
-{name:'Dead Bug',sets:3,reps:'8/side',target:'Core Stability',type:'bodyweight',icon:'🐛'}],
+{name:'Trap Bar / DB Deadlift',sets:4,reps:'8-10',target:'Hamstrings, Back, Glutes',icon:'images/deadlift.svg'},
+{name:'Incline DB Press',sets:3,reps:'10-12',target:'Upper Chest, Triceps',icon:'images/incline-press.svg'},
+{name:'Seated Cable Row',sets:3,reps:'10-12',target:'Mid Back, Biceps',icon:'images/cable-row.svg'},
+{name:'Leg Press',sets:3,reps:'12-15',target:'Quads',icon:'images/leg-press.svg'},
+{name:'Lateral Raises',sets:3,reps:'15',target:'Side Delts',icon:'images/lateral-raises.svg'},
+{name:'Dead Bug',sets:3,reps:'8/side',target:'Core Stability',type:'bodyweight',icon:'images/dead-bug.svg'}],
 finisher:'10 min stationary bike',
-warmup:[{name:'Leg Swings (forward)',detail:'10/leg — Hamstrings, hip flexors',icon:'🦵'},{name:'Leg Swings (side)',detail:'10/leg — Groin, glutes',icon:'↔️'},{name:'Hip Circles',detail:'10 each direction — Hip mobility',icon:'🔄'},{name:'Arm Circles',detail:'10 each direction — Shoulder warm-up',icon:'🔁'},{name:'Bodyweight Squat',detail:'10 slow — Ankles, knees, hips',icon:'⬇️'},{name:'Shoulder Rotations',detail:'10 each arm — Rotator cuff',icon:'🔃'}],
-stretches:[{name:"Child's Pose",detail:'40 sec — Lower back, lats',icon:'🧒'},{name:'Lying Hamstring Stretch',detail:'30 sec/side — Hamstrings',icon:'🛏️'},{name:'Doorway Chest Stretch',detail:'30 sec — Chest, front delts',icon:'🚪'},{name:'Cat-Cow',detail:'10 reps slow — Spine mobility',icon:'🐄'}]},
+warmup:[{name:'Leg Swings (forward)',detail:'10/leg — Hamstrings, hip flexors',icon:'images/leg-swing-forward.svg'},{name:'Leg Swings (side)',detail:'10/leg — Groin, glutes',icon:'images/leg-swing-side.svg'},{name:'Hip Circles',detail:'10 each direction — Hip mobility',icon:'images/hip-circles.svg'},{name:'Arm Circles',detail:'10 each direction — Shoulder warm-up',icon:'images/arm-circles.svg'},{name:'Bodyweight Squat',detail:'10 slow — Ankles, knees, hips',icon:'images/bw-squat.svg'},{name:'Shoulder Rotations',detail:'10 each arm — Rotator cuff',icon:'images/shoulder-rotations.svg'}],
+stretches:[{name:"Child's Pose",detail:'40 sec — Lower back, lats',icon:'images/childs-pose.svg'},{name:'Lying Hamstring Stretch',detail:'30 sec/side — Hamstrings',icon:'images/lying-hamstring.svg'},{name:'Doorway Chest Stretch',detail:'30 sec — Chest, front delts',icon:'images/chest-stretch.svg'},{name:'Cat-Cow',detail:'10 reps slow — Spine mobility',icon:'images/cat-cow.svg'}]},
 {id:'day3',name:'Day 3',subtitle:'Full Body (Lunge/Unilateral)',exercises:[
-{name:'Walking Lunges (DB)',sets:4,reps:'10/leg',target:'Quads, Glutes',icon:'🚶'},
-{name:'Cable Chest Fly',sets:3,reps:'12-15',target:'Chest',icon:'🦋'},
-{name:'Single-Arm DB Row',sets:3,reps:'10/side',target:'Back, Biceps',icon:'💪'},
-{name:'Face Pulls',sets:3,reps:'15-20',target:'Rear Delts, Rotator Cuff',icon:'🎯'},
-{name:'DB Bicep Curl',sets:3,reps:'12',target:'Biceps',icon:'💪'},
-{name:'Tricep Pushdown',sets:3,reps:'12-15',target:'Triceps',icon:'⬇️'},
-{name:'Cable Crunch',sets:3,reps:'15',target:'Core',icon:'🔄'}],
+{name:'Walking Lunges (DB)',sets:4,reps:'10/leg',target:'Quads, Glutes',icon:'images/walking-lunges.svg'},
+{name:'Cable Chest Fly',sets:3,reps:'12-15',target:'Chest',icon:'images/cable-fly.svg'},
+{name:'Single-Arm DB Row',sets:3,reps:'10/side',target:'Back, Biceps',icon:'images/single-arm-row.svg'},
+{name:'Face Pulls',sets:3,reps:'15-20',target:'Rear Delts, Rotator Cuff',icon:'images/face-pulls.svg'},
+{name:'DB Bicep Curl',sets:3,reps:'12',target:'Biceps',icon:'images/bicep-curl.svg'},
+{name:'Tricep Pushdown',sets:3,reps:'12-15',target:'Triceps',icon:'images/tricep-pushdown.svg'},
+{name:'Cable Crunch',sets:3,reps:'15',target:'Core',icon:'images/cable-crunch.svg'}],
 finisher:'10 min rowing machine',
-warmup:[{name:'Leg Swings (forward)',detail:'10/leg — Hamstrings, hip flexors',icon:'🦵'},{name:'Leg Swings (side)',detail:'10/leg — Groin, glutes',icon:'↔️'},{name:'Hip Circles',detail:'10 each direction — Hip mobility',icon:'🔄'},{name:'Arm Circles',detail:'10 each direction — Shoulder warm-up',icon:'🔁'},{name:'Bodyweight Squat',detail:'10 slow — Ankles, knees, hips',icon:'⬇️'},{name:'Shoulder Rotations',detail:'10 each arm — Rotator cuff',icon:'🔃'}],
-stretches:[{name:'Cross-Body Shoulder Stretch',detail:'30 sec/side — Rear delts',icon:'✖️'},{name:'Overhead Tricep Stretch',detail:'30 sec/side — Triceps',icon:'🙆'},{name:'Chest Opener (hands behind back)',detail:'30 sec — Chest, biceps',icon:'🫶'},{name:'Standing Hip Flexor Stretch',detail:'30 sec/side — Hip flexors',icon:'🧍'},{name:'Calf Stretch (wall)',detail:'30 sec/side — Calves',icon:'🧱'}]}
+warmup:[{name:'Leg Swings (forward)',detail:'10/leg — Hamstrings, hip flexors',icon:'images/leg-swing-forward.svg'},{name:'Leg Swings (side)',detail:'10/leg — Groin, glutes',icon:'images/leg-swing-side.svg'},{name:'Hip Circles',detail:'10 each direction — Hip mobility',icon:'images/hip-circles.svg'},{name:'Arm Circles',detail:'10 each direction — Shoulder warm-up',icon:'images/arm-circles.svg'},{name:'Bodyweight Squat',detail:'10 slow — Ankles, knees, hips',icon:'images/bw-squat.svg'},{name:'Shoulder Rotations',detail:'10 each arm — Rotator cuff',icon:'images/shoulder-rotations.svg'}],
+stretches:[{name:'Cross-Body Shoulder Stretch',detail:'30 sec/side — Rear delts',icon:'images/cross-body-shoulder.svg'},{name:'Overhead Tricep Stretch',detail:'30 sec/side — Triceps',icon:'images/tricep-stretch.svg'},{name:'Chest Opener (hands behind back)',detail:'30 sec — Chest, biceps',icon:'images/chest-opener.svg'},{name:'Standing Hip Flexor Stretch',detail:'30 sec/side — Hip flexors',icon:'images/hip-flexor-stand.svg'},{name:'Calf Stretch (wall)',detail:'30 sec/side — Calves',icon:'images/calf-stretch.svg'}]}
 ];
 
 // ── STATE ──
@@ -208,7 +210,9 @@ function renderWorkout(app,day){
     let card=h('div',{className:'exercise-card'});
 
     // Header with icon
-    let iconEl=h('div',{className:'ex-icon',style:{background:getIconBg(exDef),fontSize:'24px'}},exDef.icon||'🏋️');
+    let iconEl=h('div',{className:'ex-icon',style:{background:getIconBg(exDef)}});
+    let iconImg=h('img',{src:exDef.icon,style:{width:'100%',height:'100%',borderRadius:'10px',objectFit:'cover'}});
+    iconEl.appendChild(iconImg);
     let info=h('div',{style:{flex:'1',minWidth:'0'}},h('div',{className:'exercise-name'},exDef.name),h('div',{className:'exercise-target'},exDef.target));
     let meta=h('div',{className:'exercise-meta'},exDef.sets+'×'+exDef.reps);
     card.appendChild(h('div',{className:'exercise-header'},iconEl,info,meta));
@@ -275,7 +279,7 @@ function renderWarmup(app,day){
   day.warmup.forEach((s,i)=>{
     let isDone=state.stretchDone[day.id+'_warmup_'+i];
     let card=h('div',{className:'stretch-card',onClick:()=>{state.stretchDone[day.id+'_warmup_'+i]=!isDone;save('wt_stretches',state.stretchDone);render()}},
-      h('div',{className:'ex-icon',style:{width:'42px',height:'42px',background:'rgba(59,130,246,0.15)',fontSize:'20px'}},s.icon),
+      h('div',{className:'ex-icon',style:{width:'42px',height:'42px'}},h('img',{src:s.icon,style:{width:'100%',height:'100%',borderRadius:'10px',objectFit:'cover'}})),
       h('div',{className:'stretch-info'},h('div',{className:'stretch-name'+(isDone?' strikethrough':'')},s.name),h('div',{className:'stretch-detail'},s.detail)),
       h('div',{className:'stretch-check '+(isDone?'done':'pending')},isDone?'✓':'○'));
     app.appendChild(card);
@@ -297,7 +301,7 @@ function renderCooldown(app,day){
   day.stretches.forEach((s,i)=>{
     let isDone=state.stretchDone[day.id+'_cool_'+i];
     let card=h('div',{className:'stretch-card',onClick:()=>{state.stretchDone[day.id+'_cool_'+i]=!isDone;save('wt_stretches',state.stretchDone);render()}},
-      h('div',{className:'ex-icon',style:{width:'42px',height:'42px',background:'rgba(168,85,247,0.15)',fontSize:'20px'}},s.icon),
+      h('div',{className:'ex-icon',style:{width:'42px',height:'42px'}},h('img',{src:s.icon,style:{width:'100%',height:'100%',borderRadius:'10px',objectFit:'cover'}})),
       h('div',{className:'stretch-info'},h('div',{className:'stretch-name'+(isDone?' strikethrough':'')},s.name),h('div',{className:'stretch-detail'},s.detail)),
       h('div',{className:'stretch-check '+(isDone?'done':'pending')},isDone?'✓':'○'));
     app.appendChild(card);
